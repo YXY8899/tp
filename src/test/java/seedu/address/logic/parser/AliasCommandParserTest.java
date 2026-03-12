@@ -41,6 +41,12 @@ public class AliasCommandParserTest {
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddAliasCommand.MESSAGE_USAGE));
     }
 
+    @Test
+    public void parse_addAliasNonEmptyPreamble_failure() {
+        assertParseFailure(parser, "add extrawords n/Benjamin al/Benjumpin",
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddAliasCommand.MESSAGE_USAGE));
+    }
+
     // Tests for delete alias command
     @Test
     public void parse_deleteAliasValidInput_success() {
@@ -60,6 +66,11 @@ public class AliasCommandParserTest {
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteAliasCommand.MESSAGE_USAGE));
     }
 
+    @Test
+    public void parse_deleteAliasNonEmptyPreamble_failure() {
+        assertParseFailure(parser, "delete extrawords n/Benjamin al/Benjumpin",
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteAliasCommand.MESSAGE_USAGE));
+    }
     // Tests for unknown actions and invalid formats
 
     @Test

@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.testutil.Assert.assertThrows;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Test;
 
 public class AliasTest {
@@ -63,5 +65,13 @@ public class AliasTest {
 
         // different case -> returns true (equals is case-insensitive)
         assertTrue(alias.equals(new Alias("valid alias")));
+    }
+
+    @Test
+    public void hashCode_caseInsensitive_equalAliasesHaveSameHashCode() {
+        Alias alias1 = new Alias("CaseInsensitive");
+        Alias alias2 = new Alias("caseinsensitive");
+        assertTrue(alias1.equals(alias2));
+        assertTrue(alias1.hashCode() == alias2.hashCode());
     }
 }
