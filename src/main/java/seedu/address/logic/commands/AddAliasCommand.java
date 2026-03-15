@@ -93,9 +93,6 @@ public class AddAliasCommand extends Command {
 
         Person editedPerson = new Person(
                 personToEdit.getName(),
-                personToEdit.getPhone(),
-                personToEdit.getEmail(),
-                personToEdit.getAddress(),
                 personToEdit.getTags(),
                 updatedGames
         );
