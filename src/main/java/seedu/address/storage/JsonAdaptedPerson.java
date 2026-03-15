@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
+import seedu.address.model.game.Game;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -29,20 +30,25 @@ class JsonAdaptedPerson {
     private final String email;
     private final String address;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
+    private final List<JsonAdaptedGame> games = new ArrayList<>();
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address,
-            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+                             @JsonProperty("email") String email, @JsonProperty("address") String address,
+                             @JsonProperty("tags") List<JsonAdaptedTag> tags,
+                             @JsonProperty("games") List<JsonAdaptedGame> games) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
         if (tags != null) {
             this.tags.addAll(tags);
+        }
+        if (games != null) {
+            this.games.addAll(games);
         }
     }
 
@@ -57,6 +63,9 @@ class JsonAdaptedPerson {
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
+        games.addAll(source.getGames().stream()
+                .map(JsonAdaptedGame::new)
+                .collect(Collectors.toList()));
     }
 
     /**
@@ -68,6 +77,10 @@ class JsonAdaptedPerson {
         final List<Tag> personTags = new ArrayList<>();
         for (JsonAdaptedTag tag : tags) {
             personTags.add(tag.toModelType());
+        }
+        final List<Game> personGames = new ArrayList<>();
+        for (JsonAdaptedGame game : games) {
+            personGames.add(game.toModelType());
         }
 
         if (name == null) {
@@ -101,9 +114,9 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(Address.MESSAGE_CONSTRAINTS);
         }
         final Address modelAddress = new Address(address);
-
+        final Set<Game> modelGames = new HashSet<>(personGames);
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelTags, modelGames);
     }
 
 }
