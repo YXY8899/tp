@@ -220,8 +220,8 @@ Throughout this guide, you will see the following callout boxes:
 ### Notes about the command format
 
 <box type="info" seamless>
-<br>
 
+**Info:**
 * Commands follow the format `CATEGORY ACTION`, where `CATEGORY` is `contact`, `game`, or `alias`, followed by an action such as `add`, `delete`, or `edit`.<br>
   e.g. `contact add`, `game delete`, `alias edit`. Note: `game` does not support `edit` — to rename a game, delete it and add a new one.
 
