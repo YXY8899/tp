@@ -54,6 +54,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 **Reference**
 * [FAQ](#faq)
 * [Known issues](#known-issues)
+* [Glossary](#glossary)
 * [Command summary](#command-summary)
 
 --------------------------------------------------------------------------------------------------------------------
@@ -130,7 +131,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 
    <box type="warning" seamless>
 
-   **Wayland display server:** If the app fails with a `Gdk-CRITICAL` error, run this instead:
+   **Caution:** **Wayland display server:** If the app fails with a `Gdk-CRITICAL` error, run this instead:
    ```
    GDK_BACKEND=x11 java -jar "harmony.jar"
    ```
@@ -142,7 +143,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 
    <box type="tip" seamless>
 
-   Always launch Harmony using the `java -jar` command rather than double-clicking the file. This ensures the correct Java version is used. We strongly recommend surrounding the filename with double quotes in case special characters in the filename cause the command to break.
+   **Tip:** Always launch Harmony using the `java -jar` command rather than double-clicking the file. This ensures the correct Java version is used. We strongly recommend surrounding the filename with double quotes in case special characters in the filename cause the command to break.
 
    </box>
 
@@ -181,7 +182,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 
 <box type="tip" seamless>
 
-Use the ↑ and ↓ arrow keys in the command box to cycle through previously typed commands — useful for re-running or editing a recent command without retyping it.
+**Tip:** Use the ↑ and ↓ arrow keys in the command box to cycle through previously typed commands — useful for re-running or editing a recent command without retyping it.
 
 </box>
 
@@ -241,17 +242,20 @@ You can interact with your User Profile using the `me` keyword in place of an in
 
 <box type="tip" seamless>
 
+**Tip:**
 * Your User Profile always appears at the top of the contact list. It is not counted in the contact list total displayed after commands like `list` or `find`.
 * If the User Profile is not detected during runtime or at startup, a PLACEHOLDER will be generated.
 
 </box>
 
 <box type="warning" seamless>
-`me` is a special reserved keyword — it is **not** the same as `n/me`. The parameter `n/me` refers to contacts whose name is `me`, whereas `me` specifically targets your own User Profile.
+
+**Caution:** `me` is a special reserved keyword — it is **not** the same as `n/me`. The parameter `n/me` refers to contacts whose name is `me`, whereas `me` specifically targets your own User Profile.
 </box>
 
 <box type="warning" seamless>
-If multiple User Profiles are detected on start up, it will be deemed as a corrupt addressbook.json. This can be remedied by modifying the `data/addressbook.json` to only contain one `"isUserProfile" : true`
+
+**Caution:** If multiple User Profiles are detected on start up, it will be deemed as a corrupt addressbook.json. This can be remedied by modifying the `data/addressbook.json` to only contain one `"isUserProfile" : true`
 </box>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -266,12 +270,26 @@ Shows a message explaining how to access the help page.
 
 Format: `help`
 
+<panel header="Expected Output" minimized>
+
+A help window appears with a link to the online User Guide.
+
+</panel>
+
 
 ### Listing all contacts: `list`
 
 Shows a list of all contacts in Harmony.
 
 Format: `list`
+
+<panel header="Expected Output" minimized>
+
+```
+Listed all persons
+```
+
+</panel>
 
 
 ### Undoing the last command: `undo`
@@ -288,13 +306,16 @@ Format: `undo`
 
 </box>
 
-Sample output:
+<panel header="Expected Output" minimized>
+
 ```
 Undo successful.
 ```
 ```
 Error: Nothing to undo.
 ```
+
+</panel>
 
 
 ### Clearing all entries: `clear`
@@ -311,6 +332,15 @@ A confirmation prompt will appear. Type `y` or `yes` to confirm, or `n` or `no` 
 
 **Confirmation prompt**<br>
 <p align="center"><img width="70%" alt="Clear confirmation prompt" src="images/clearConfirmation.png"/></p>
+
+<panel header="Expected Output" minimized>
+
+After typing `y` to confirm:
+```
+contact list has been cleared!
+```
+
+</panel>
 
 
 ### Changing the UI theme: `theme`
@@ -336,6 +366,14 @@ Format: `theme THEME_NAME`
 Examples:
 * `theme light`
 * `theme dark`
+
+<panel header="Expected Output" minimized>
+
+```
+Theme switched to: light
+```
+
+</panel>
 
 
 ### Exiting the program: `exit`
@@ -374,6 +412,14 @@ Examples:
 * `contact add n/John Doe`
 * `contact add n/Alice g/Valorant al/AliceV g/Minecraft`
 
+<panel header="Expected Output" minimized>
+
+```
+Contact added: John Doe
+```
+
+</panel>
+
 
 ### Viewing a contact's profile: `view`
 
@@ -402,6 +448,19 @@ Examples:
 * `view n/John Doe`
 * `view me`
 
+<panel header="Expected Output" minimized>
+
+```
+Viewing Contact: John Doe
+```
+For `view me`:
+```
+Displaying your profile.
+```
+The contact's full details (games and aliases) appear in the side panel.
+
+</panel>
+
 
 ### Copying a contact: `copy`
 
@@ -423,6 +482,15 @@ Examples:
 * `copy 1`
 * `copy n/John Doe`
 * `copy me`
+
+<panel header="Expected Output" minimized>
+
+```
+Copied contact to clipboard: John Doe
+```
+The command string is now in your clipboard, ready to paste into another Harmony instance.
+
+</panel>
 
 
 ### Editing a contact's name: `contact edit`
@@ -448,6 +516,14 @@ Examples:
 * `contact edit n/John Doe e/John Smith` Renames `John Doe` to `John Smith`.
 * `contact edit me e/ProGamer99` Renames your own user profile to `ProGamer99`.
 
+<panel header="Expected Output" minimized>
+
+```
+Contact updated: John Doe → John Smith
+```
+
+</panel>
+
 
 ### Locating contacts: `find`
 
@@ -466,7 +542,7 @@ Format: `find [n/NAME] [g/GAME_NAME] [al/ALIAS]`
 
 <box type="tip" seamless>
 
-`al/` matches aliases across all games, not just the game specified by `g/`.
+**Tip:** `al/` matches aliases across all games, not just the game specified by `g/`.
 
 </box>
 
@@ -477,6 +553,15 @@ Examples:
 * `find n/Alice g/Valorant` returns contacts whose name contains `Alice` and who also play `Valorant`.
 * `find g/Valorant al/Ace` returns contacts who play `Valorant` and have an alias containing `Ace` (alias can be from any game).
 * `find n/Alice g/Valorant al/Ace` returns contacts whose name contains `Alice`, who play `Valorant`, and have an alias containing `Ace`.
+
+<panel header="Expected Output" minimized>
+
+```
+2 persons listed!
+```
+The contact list updates to show only matching contacts. Use `list` to restore all contacts.
+
+</panel>
 
 
 ### Deleting a contact: `contact delete`
@@ -501,6 +586,19 @@ Examples:
 * `contact delete 1` prompts for confirmation, then deletes the 1st contact in the list.
 * `contact delete n/John Doe` prompts for confirmation, then deletes the contact named `John Doe`.
 * `contact delete me` prompts for confirmation, then resets the User Profile to `PLACEHOLDER`.
+
+<panel header="Expected Output" minimized>
+
+After typing `y` to confirm:
+```
+Contact deleted: John Doe
+```
+For `contact delete me`:
+```
+Your User Profile has been successfully reset to default.
+```
+
+</panel>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -533,6 +631,14 @@ Examples:
 * `game add n/John Doe g/Valorant`
 * `game add me g/Overwatch`
 
+<panel header="Expected Output" minimized>
+
+```
+Game Minecraft added to John Doe
+```
+
+</panel>
+
 ### Deleting a game from a contact: `game delete`
 
 Removes a game from an existing contact or your user profile.
@@ -555,6 +661,15 @@ Examples:
 * `game delete n/John Doe g/Minecraft` prompts for confirmation, then removes Minecraft from John Doe.
 * `game delete me g/Valorant` prompts for confirmation, then removes Valorant from your profile.
 
+<panel header="Expected Output" minimized>
+
+After typing `y` to confirm:
+```
+Game "Minecraft" removed from John Doe
+```
+
+</panel>
+
 ### Listing games of a contact: `game list`
 
 Lists all games of an existing contact or your user profile.
@@ -564,18 +679,22 @@ Format:
 * By name: `game list n/CONTACT_NAME`
 * User Profile: `game list me`
 
-Sample output:
-```
-Alice's games: Minecraft, Valorant
-```
-```
-Alice currently has no games.
-```
-
 Examples:
 * `game list 1`
 * `game list n/John Doe`
 * `game list me`
+
+<panel header="Expected Output" minimized>
+
+```
+John Doe's games: Minecraft, Valorant
+```
+If the contact has no games:
+```
+John Doe currently has no games.
+```
+
+</panel>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -610,6 +729,14 @@ Examples:
 * `alias add n/John Doe g/Valorant al/Benjumpin`
 * `alias add me g/Valorant al/Benjumpin`
 
+<panel header="Expected Output" minimized>
+
+```
+Alias 'Benjumpin' added to John Doe's game: Valorant
+```
+
+</panel>
+
 ### Editing an alias of a game: `alias edit`
 
 Updates an existing alias of a game for a contact or your user profile.
@@ -630,6 +757,14 @@ Examples:
 * `alias edit 1 g/Valorant al/JohnnyV na/JohnnyValorant`
 * `alias edit n/John Doe g/Valorant al/JohnnyV na/JohnnyValorant`
 * `alias edit me g/Valorant al/JohnnyV na/JohnnyValorant`
+
+<panel header="Expected Output" minimized>
+
+```
+Alias "JohnnyV" updated to "JohnnyValorant" for John Doe in Valorant
+```
+
+</panel>
 
 ### Deleting an alias from a game: `alias delete`
 
@@ -652,6 +787,15 @@ Examples:
 * `alias delete 1 g/Valorant al/Benjumpin` prompts for confirmation, then removes the alias from the 1st contact.
 * `alias delete n/John Doe g/Valorant al/Benjumpin` prompts for confirmation, then removes the alias from John Doe.
 * `alias delete me g/Valorant al/Benjumpin` prompts for confirmation, then removes the alias from your profile.
+
+<panel header="Expected Output" minimized>
+
+After typing `y` to confirm:
+```
+Alias "Benjumpin" removed from John Doe in Valorant
+```
+
+</panel>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -701,6 +845,23 @@ Furthermore, certain edits can cause Harmony to behave in unexpected ways (e.g.,
 
 --------------------------------------------------------------------------------------------------------------------
 
+## Glossary
+
+| Term | Definition |
+|------|------------|
+| **Alias** | An in-game username used by a contact for a specific game (e.g., `JohnnyV` for Valorant) |
+| **CLI (Command Line Interface)** | A text-based interface where you interact with the application by typing commands |
+| **Confirmation prompt** | A `y/n` prompt that appears before destructive actions (e.g., delete, clear) to prevent accidental data loss |
+| **Contact** | A person stored in Harmony, identified by their name along with their associated games and aliases |
+| **Game** | A video game linked to a contact in Harmony (e.g., `Valorant`, `Minecraft`) |
+| **GUI (Graphical User Interface)** | A visual interface with windows and interactive elements; Harmony uses this alongside the CLI |
+| **Index** | The position number of a contact in the currently displayed list, starting from 1 |
+| **Prefix** | A short tag in commands that identifies what type of input follows (e.g., `n/` for name, `g/` for game, `al/` for alias) |
+| **PLACEHOLDER** | The default display name of your User Profile before it has been customised |
+| **User Profile** | A special entry in Harmony representing you, the user — accessible via the `me` keyword |
+
+--------------------------------------------------------------------------------------------------------------------
+
 ## Command summary
 
 | Action             | Format, Examples                                                                                                                                                                                                                                |
@@ -711,7 +872,7 @@ Furthermore, certain edits can cause Harmony to behave in unexpected ways (e.g.,
 | **Clear**          | `clear`                                                                                                                                                                                                                                         |
 | **Theme**          | `theme THEME_NAME`<br> e.g., `theme light`                                                                                                                                                                                                      |
 | **Exit**           | `exit`                                                                                                                                                                                                                                          |
-| **Contact Add**    | `contact add n/NAME [g/GAME [al/ALIAS]…​]…​`<br> e.g., `contact add n/James Ho g/Valorant al/JohnV`                                                                                                                                             |
+| **Contact Add**    | `contact add n/NAME [g/GAME [al/ALIAS]…​]…​`<br> e.g., `contact add n/James Ho g/Valorant al/JohnV g/Minecraft`                                                                                                                                             |
 | **View**           | `view INDEX` or `view n/NAME` or `view me`<br> e.g., `view 1` or `view n/James Ho` or `view me`                                                                                                                                                |
 | **Copy**           | `copy INDEX` or `copy n/NAME` or `copy me`<br> e.g., `copy 1` or `copy n/James Ho` or `copy me`                                                                                                                                                |
 | **Contact Edit**   | `contact edit INDEX e/NEW_NAME` or `contact edit n/NAME e/NEW_NAME` or `contact edit me e/NEW_NAME`<br> e.g., `contact edit 1 e/James Lee` or `contact edit n/James Ho e/James Lee`                                                             |
