@@ -93,6 +93,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 
    <box type="info" seamless>
 
+   **Info:**
    Replace `path\to\folder` with the actual path to the folder containing `harmony.jar`.<br>
    e.g., `cd C:\Users\John\Downloads\Harmony`
 
@@ -109,6 +110,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 
    <box type="info" seamless>
 
+   **Info:**
    Replace `path/to/folder` with the actual path to the folder containing `harmony.jar`.<br>
    e.g., `cd /Users/John/Downloads/Harmony`
 
@@ -125,6 +127,7 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 
    <box type="info" seamless>
 
+   **Info:**
    Replace `path/to/folder` with the actual path to the folder containing `harmony.jar`.<br>
    e.g., `cd /home/john/Downloads/Harmony`
 
@@ -322,6 +325,7 @@ Format: `undo`
 
 <box type="info" seamless>
 
+**Info:**
 * Undoable commands include: `contact add`, `contact delete`, `contact edit`, `game add`, `game delete`, `alias add`, `alias edit`, `alias delete`, and `clear`.
 * Multiple consecutive `undo` calls will reverse commands in reverse order of execution.
 * If there are no commands left to undo, an error message is shown.
@@ -348,6 +352,7 @@ Format: `clear`
 
 <box type="info" seamless>
 
+**Info:**
 A confirmation prompt will appear. Type `y` or `yes` to confirm, or `n` or `no` to cancel.
 
 </box>
@@ -373,6 +378,7 @@ Format: `theme THEME_NAME`
 
 <box type="info" seamless>
 
+**Info:**
 * Currently supported themes are `dark`, `light`, and an Easter Egg!
 * The `dark` theme is the default appearance.
 * The application will immediately update its interface to the specified theme.
@@ -410,6 +416,7 @@ Format: `exit`
 
 <box type="info" seamless>
 
+**Info:**
 For commands that target a specific contact by name, `NAME` must match the contact's full name exactly (case-insensitive).
 
 </box>
@@ -458,6 +465,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 * Use the exact keyword `me` to view your own user profile.
 * `contact view` also works as an alternative form.
 
@@ -526,6 +534,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 * `INDEX` refers to the index number shown in the displayed contact list. Must be a positive integer.
 * Providing both `INDEX` and `n/NAME` at the same time is not allowed.
 * The contact's games and aliases are preserved after the rename.
@@ -555,6 +564,7 @@ Format: `find [n/NAME] [g/GAME_NAME] [al/ALIAS]`
 
 <box type="info" seamless>
 
+**Info:**
 * At least one constraint must be provided.
 * All specified constraints must be satisfied (i.e. `AND` search).
 * `find` uses **partial word search** — you do not need to type the full name, game, or alias. For example, `find n/Ali` will match `Alice`, `Alicia`, and any contact whose name contains `Ali`.
@@ -597,6 +607,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 * Deletes the contact at the specified `INDEX` in the displayed list, or whose name matches `NAME` (case-insensitive).
 * If `me` is specified, the User Profile will be reset to `PLACEHOLDER`.
 * A confirmation prompt will appear. Type `y` or `yes` to confirm, or `n` or `no` to cancel.
@@ -628,6 +639,7 @@ Your User Profile has been successfully reset to default.
 
 <box type="info" seamless>
 
+**Info:**
 * For commands that target a specific contact by name, `CONTACT_NAME` must match the contact's full name exactly (case-insensitive).
 * `GAME_NAME` must match the game's exact name (case-insensitive). e.g. `valorant` will match a game stored as `Valorant`.
 
@@ -644,6 +656,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 The game cannot already exist for that contact.
 
 </box>
@@ -672,6 +685,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 * The game must exist for that contact.
 * A confirmation prompt will appear. Type `y` or `yes` to confirm, or `n` or `no` to cancel.
 * Any other input cancels the deletion.
@@ -724,6 +738,7 @@ John Doe currently has no games.
 
 <box type="info" seamless>
 
+**Info:**
 * `CONTACT_NAME` must match the contact's full name exactly (case-insensitive).
 * `GAME_NAME` must match the game's exact name (case-insensitive). e.g. `valorant` will match a game stored as `Valorant`.
 * All alias commands require the contact to already have the specified game. Use `game add` first if needed.
@@ -742,6 +757,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 The alias cannot already exist for that game.
 
 </box>
@@ -770,6 +786,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 * `OLD_ALIAS` must already exist for that game.
 * `NEW_ALIAS` must not already exist for that game.
 
@@ -799,6 +816,7 @@ Format:
 
 <box type="info" seamless>
 
+**Info:**
 * The alias must exist for that game.
 * A confirmation prompt will appear. Type `y` or `yes` to confirm, or `n` or `no` to cancel.
 * Any other input cancels the deletion.
@@ -829,6 +847,7 @@ Harmony data is saved to your computer automatically after any command that chan
 
 <box type="info" seamless>
 
+**Info:**
 Data is saved to `[JAR file location]/data/addressbook.json`.
 
 </box>
