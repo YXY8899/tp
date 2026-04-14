@@ -18,7 +18,8 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 * [Quick start](#quick-start)
 
 **Features**
-* [Notes about the command format](#features)
+* [Reading this guide](#reading-this-guide)
+* [Notes about the command format](#notes-about-the-command-format)
 * [Your User Profile](#your-user-profile)
 
 **General**
@@ -191,6 +192,27 @@ Harmony is a **desktop app built for gamers** 🎮 who want to **manage their ga
 --------------------------------------------------------------------------------------------------------------------
 
 ## Features
+
+### Reading this guide
+
+Throughout this guide, you will see the following callout boxes:
+
+<box type="info" seamless>
+
+**Info:** Provides additional details or clarifications about a feature.
+</box>
+
+<box type="tip" seamless>
+
+**Tip:** Suggests helpful ways to use a feature more effectively.
+</box>
+
+<box type="warning" seamless>
+
+**Caution:** Highlights important information to avoid mistakes or data loss.
+</box>
+
+--------------------------------------------------------------------------------------------------------------------
 
 ### Notes about the command format
 
