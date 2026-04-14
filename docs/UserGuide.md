@@ -296,9 +296,7 @@ Shows a message explaining how to access the help page.
 Format: `help`
 
 <panel header="Expected Output" minimized>
-
 A help window appears with a link to the online User Guide.
-
 </panel>
 
 
@@ -309,11 +307,9 @@ Shows a list of all contacts in Harmony.
 Format: `list`
 
 <panel header="Expected Output" minimized>
-
 ```
 Listed all persons
 ```
-
 </panel>
 
 
@@ -333,14 +329,12 @@ Format: `undo`
 </box>
 
 <panel header="Expected Output" minimized>
-
 ```
 Undo successful.
 ```
 ```
 Error: Nothing to undo.
 ```
-
 </panel>
 
 
@@ -361,12 +355,10 @@ A confirmation prompt will appear. Type `y` or `yes` to confirm, or `n` or `no` 
 <p align="center"><img width="70%" alt="Clear confirmation prompt" src="images/clearConfirmation.png"/></p>
 
 <panel header="Expected Output" minimized>
-
 After typing `y` to confirm:
 ```
 contact list has been cleared!
 ```
-
 </panel>
 
 
@@ -396,11 +388,9 @@ Examples:
 * `theme dark`
 
 <panel header="Expected Output" minimized>
-
 ```
 Theme switched to: light
 ```
-
 </panel>
 
 
@@ -442,11 +432,9 @@ Examples:
 * `contact add n/Alice g/Valorant al/AliceV g/Minecraft`
 
 <panel header="Expected Output" minimized>
-
 ```
 Contact added: John Doe
 ```
-
 </panel>
 
 
@@ -479,7 +467,6 @@ Examples:
 * `view me`
 
 <panel header="Expected Output" minimized>
-
 ```
 Viewing Contact: John Doe
 ```
@@ -488,7 +475,6 @@ For `view me`:
 Displaying your profile.
 ```
 The contact's full details (games and aliases) appear in the side panel.
-
 </panel>
 
 
@@ -514,12 +500,10 @@ Examples:
 * `copy me`
 
 <panel header="Expected Output" minimized>
-
 ```
 Copied contact to clipboard: John Doe
 ```
 The command string is now in your clipboard, ready to paste into another Harmony instance.
-
 </panel>
 
 
@@ -548,11 +532,9 @@ Examples:
 * `contact edit me e/ProGamer99` Renames your own user profile to `ProGamer99`.
 
 <panel header="Expected Output" minimized>
-
 ```
 Contact updated: John Doe → John Smith
 ```
-
 </panel>
 
 
@@ -587,12 +569,10 @@ Examples:
 * `find n/Alice g/Valorant al/Ace` returns contacts whose name contains `Alice`, who play `Valorant`, and have an alias containing `Ace`.
 
 <panel header="Expected Output" minimized>
-
 ```
 2 persons listed!
 ```
 The contact list updates to show only matching contacts. Use `list` to restore all contacts.
-
 </panel>
 
 
@@ -621,7 +601,6 @@ Examples:
 * `contact delete me` prompts for confirmation, then resets the User Profile to `PLACEHOLDER`.
 
 <panel header="Expected Output" minimized>
-
 After typing `y` to confirm:
 ```
 Contact deleted: John Doe
@@ -630,7 +609,6 @@ For `contact delete me`:
 ```
 Your User Profile has been successfully reset to default.
 ```
-
 </panel>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -667,11 +645,9 @@ Examples:
 * `game add me g/Overwatch`
 
 <panel header="Expected Output" minimized>
-
 ```
 Game Minecraft added to John Doe
 ```
-
 </panel>
 
 ### Deleting a game from a contact: `game delete`
@@ -698,12 +674,10 @@ Examples:
 * `game delete me g/Valorant` prompts for confirmation, then removes Valorant from your profile.
 
 <panel header="Expected Output" minimized>
-
 After typing `y` to confirm:
 ```
 Game "Minecraft" removed from John Doe
 ```
-
 </panel>
 
 ### Listing games of a contact: `game list`
@@ -721,7 +695,6 @@ Examples:
 * `game list me`
 
 <panel header="Expected Output" minimized>
-
 ```
 John Doe's games: Minecraft, Valorant
 ```
@@ -729,7 +702,6 @@ If the contact has no games:
 ```
 John Doe currently has no games.
 ```
-
 </panel>
 
 --------------------------------------------------------------------------------------------------------------------
@@ -768,11 +740,9 @@ Examples:
 * `alias add me g/Valorant al/Benjumpin`
 
 <panel header="Expected Output" minimized>
-
 ```
 Alias 'Benjumpin' added to John Doe's game: Valorant
 ```
-
 </panel>
 
 ### Editing an alias of a game: `alias edit`
@@ -798,11 +768,9 @@ Examples:
 * `alias edit me g/Valorant al/JohnnyV na/JohnnyValorant`
 
 <panel header="Expected Output" minimized>
-
 ```
 Alias "JohnnyV" updated to "JohnnyValorant" for John Doe in Valorant
 ```
-
 </panel>
 
 ### Deleting an alias from a game: `alias delete`
@@ -829,12 +797,10 @@ Examples:
 * `alias delete me g/Valorant al/Benjumpin` prompts for confirmation, then removes the alias from your profile.
 
 <panel header="Expected Output" minimized>
-
 After typing `y` to confirm:
 ```
 Alias "Benjumpin" removed from John Doe in Valorant
 ```
-
 </panel>
 
 --------------------------------------------------------------------------------------------------------------------
